@@ -12,19 +12,20 @@ Example 1:
 Input: words = ["leet","code"], x = "e"
 Output: [0,1]
 Explanation: "e" occurs in both words: "leet", and "code". Hence, we return indices 0 and 1.
-Example 2:
 
+Example 2:
 Input: words = ["abc","bcd","aaaa","cbc"], x = "a"
 Output: [0,2]
 Explanation: "a" occurs in "abc", and "aaaa". Hence, we return indices 0 and 2.
-Example 3:
 
+Example 3:
 Input: words = ["abc","bcd","aaaa","cbc"], x = "z"
 Output: []
 Explanation: "z" does not occur in any of the words. Hence, we return an empty array.
+
  */
 
-class Solution {
+ class Solution {
     public List<Integer> findWordsContaining(String[] words, char x) {
         List<Integer> li = new ArrayList<Integer>();
         
@@ -43,21 +44,13 @@ class Solution {
 }
 
 /*
- * Solution Explanation:
+ * **Solution**:
+ *    Let's break down the problem to understand it clearly. We need to find the indices of the words in the array `words` that contain the character `x`.
  * 
- * Problem:
- * Given an array of strings `words` and a character `x`, find the indices of the words that contain the character `x`.
- * 
- * Approach:
- * 
- * 1. **Initialization**:
- *    - Create an empty list `li` to store the indices of words containing the character `x`.
- * 
- * 2. **Iterate through the Words**:
- *    - Loop through each word in the `words` array using an index `i`.
- *    - For each word, loop through its characters using an index `j`.
- *    - If the character `x` is found in the word, add the index `i` to the list `li` and break out of the inner loop.
- * 
- * 3. **Return the List**:
- *    - After processing all words, return the list `li` containing the indices of words that contain the character `x`.
+ * **Steps**:
+ * 1. We initialize an empty list `li` to store the indices of the words that contain the character `x`.
+ * 2. We loop through each word in the array `words` using the index `i`.
+ * 3. For each word `s` at index `i`, we loop through each character in the word.
+ * 4. If we find a character in the word that matches `x`, we add the index `i` to the list `li` and break out of the inner loop to move to the next word.
+ * 5. After we have checked all the words, we return the list `li` which contains the indices of the words that contain the character `x`.
  */
